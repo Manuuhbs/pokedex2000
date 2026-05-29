@@ -1,0 +1,2 @@
+agua;fogo;grama
+grama;agua;fogo
