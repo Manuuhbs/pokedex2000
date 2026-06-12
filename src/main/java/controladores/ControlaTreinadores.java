@@ -35,15 +35,34 @@ public class ControlaTreinadores {
             return null;
         }
     }
-         
 
     public boolean excluir(int id) {
         try {
             trDAO.excluir(id);
             return true;
         } catch (SQLException ex) {
-            System.out.println("Erro ao excluir tipos: " + ex.getMessage());
+            System.out.println("Erro ao excluir treinadores: " + ex.getMessage());
+            return false;
+        }
+           
+
+    public boolean editar(Treinadores ts) {
+        try {
+            trDAO.editar(ts);
+            return true;
+        } catch (SQLException ex) {
+            System.out.println("Erro ao editar treinadores: " + ex.getMessage());
             return false;
         }
     }
+
+    public Treinadores recuperarUm(int id) {
+        try {
+            return trDAO.recuperarUm(id);
+        } catch (SQLException ex) {
+            System.out.println("Erro ao recuperar treinadores: " + ex.getMessage());
+            return null;
+        }
+    }
+
 }

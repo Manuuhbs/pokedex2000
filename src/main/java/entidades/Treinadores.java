@@ -9,11 +9,12 @@ package entidades;
  * @author belli
  */
 public class Treinadores {
-private int idTreinador;
-private String nome;
-private int idade;
-private String sexo;
-private String genero;
+
+    private int idTreinador;
+    private String nome;
+    private String idade;
+    private String sexo;
+    private String genero;
 
     public int getIdTreinador() {
         return idTreinador;
@@ -47,11 +48,11 @@ private String genero;
         this.genero = genero;
     }
 
-    public int getIdade() {
+    public String getIdade() {
         return idade;
     }
 
-    public void setIdade(int idade) {
+    public void setIdade(String idade) {
         this.idade = idade;
     }
 }

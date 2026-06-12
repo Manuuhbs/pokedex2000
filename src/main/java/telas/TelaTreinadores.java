@@ -4,6 +4,7 @@
  */
 package telas;
 
+import apoio.Formatacao;
 import controladores.ControlaTreinadores;
 import entidades.Treinadores;
 import java.util.ArrayList;
@@ -38,12 +39,14 @@ public class TelaTreinadores extends javax.swing.JInternalFrame {
                 public String getColumnName(int column) {
                     switch (column) {
                         case 0:
+                            return "Id Treinador";
+                            case 1:
                             return "Nome";
-                        case 1:
-                            return "Idade";
                         case 2:
-                            return "Sexo";
+                            return "Idade";
                         case 3:
+                            return "Sexo";
+                        case 4:
                             return "Gênero";
                         default:
                             return "";
@@ -52,7 +55,7 @@ public class TelaTreinadores extends javax.swing.JInternalFrame {
 
                 @Override
                 public int getColumnCount() {
-                    return 3;
+                    return 5;
                 }
 
                 @Override
@@ -249,10 +252,10 @@ public class TelaTreinadores extends javax.swing.JInternalFrame {
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
          String nome = txtNome.getText();
-        int idade = Integer.parseInt(txtIdade.getText());
+        String idade = txtIdade.getText();
         String sexo = txtSexo.getText();
         String genero = txtGenero.getText();
-
+        String d = Formatacao.ajustaDataAMD(idade);
         Treinadores tr = new Treinadores();
         tr.setNome(nome);
         tr.setIdade(idade);
