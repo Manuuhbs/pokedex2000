@@ -14,6 +14,7 @@ public class Pokemons {
     private String url;
     private int tipoPrimario;
     private int tipoSecundario;
+    
     public int getNumPokedex() {
         return numPokedex;
     }

@@ -5,6 +5,7 @@
 package telas;
 
 import apoio.ComboItem;
+import apoio.Mensagem;
 import controladores.ControlaPokemons;
 import controladores.ControlaTipos;
 import entidades.DAO.CombosDAO;
@@ -22,6 +23,7 @@ public class TelaPokemons extends javax.swing.JInternalFrame {
 
     ControlaPokemons cp = new ControlaPokemons();
     ControlaTipos ct = new ControlaTipos();
+    int codigo = 0;
 
     /**
      * Creates new form TelaPokemons
@@ -103,17 +105,18 @@ public class TelaPokemons extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        tabAbas = new javax.swing.JTabbedPane();
         panConsulta = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblPokemons = new javax.swing.JTable();
         btnExcluir = new javax.swing.JButton();
+        btnEditar = new javax.swing.JButton();
         panCadastra = new javax.swing.JPanel();
         btnSalvar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         lblTipo1 = new javax.swing.JLabel();
-        txtNomePoke = new javax.swing.JTextField();
+        txtNome = new javax.swing.JTextField();
         cmbTiposprim = new javax.swing.JComboBox<>();
         lblTipo2 = new javax.swing.JLabel();
         cmbTipossecun = new javax.swing.JComboBox<>();
@@ -138,6 +141,9 @@ public class TelaPokemons extends javax.swing.JInternalFrame {
         btnExcluir.setText("Excluir");
         btnExcluir.addActionListener(this::btnExcluirActionPerformed);
 
+        btnEditar.setText("Editar");
+        btnEditar.addActionListener(this::btnEditarActionPerformed);
+
         javax.swing.GroupLayout panConsultaLayout = new javax.swing.GroupLayout(panConsulta);
         panConsulta.setLayout(panConsultaLayout);
         panConsultaLayout.setHorizontalGroup(
@@ -145,21 +151,25 @@ public class TelaPokemons extends javax.swing.JInternalFrame {
             .addGroup(panConsultaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 556, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panConsultaLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(panConsultaLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
                 .addComponent(btnExcluir)
-                .addGap(270, 270, 270))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnEditar)
+                .addGap(22, 22, 22))
         );
         panConsultaLayout.setVerticalGroup(
             panConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panConsultaLayout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnExcluir)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnExcluir)
+                    .addComponent(btnEditar))
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("Consulta", panConsulta);
+        tabAbas.addTab("Consulta", panConsulta);
 
         btnSalvar.setText("Salvar");
         btnSalvar.addActionListener(this::btnSalvarActionPerformed);
@@ -168,7 +178,7 @@ public class TelaPokemons extends javax.swing.JInternalFrame {
 
         lblTipo1.setText("Tipo primário");
 
-        txtNomePoke.addActionListener(this::txtNomePokeActionPerformed);
+        txtNome.addActionListener(this::txtNomeActionPerformed);
 
         cmbTiposprim.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -183,42 +193,47 @@ public class TelaPokemons extends javax.swing.JInternalFrame {
             panCadastraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panCadastraLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(panCadastraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panCadastraLayout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addContainerGap(556, Short.MAX_VALUE))
-                    .addGroup(panCadastraLayout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addGroup(panCadastraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(cmbTipossecun, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblTipo2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(panCadastraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtNomePoke, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
-                        .addGap(71, 71, 71)
-                        .addGroup(panCadastraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblTipo1)
-                            .addComponent(cmbTiposprim, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(66, 66, 66))))
+                .addComponent(jLabel3)
+                .addContainerGap(556, Short.MAX_VALUE))
             .addGroup(panCadastraLayout.createSequentialGroup()
                 .addGap(230, 230, 230)
                 .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(panCadastraLayout.createSequentialGroup()
+                .addGap(62, 62, 62)
+                .addGroup(panCadastraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblTipo1)
+                    .addComponent(cmbTiposprim, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panCadastraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panCadastraLayout.createSequentialGroup()
+                        .addGroup(panCadastraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2))
+                        .addGap(228, 228, 228))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panCadastraLayout.createSequentialGroup()
+                        .addGroup(panCadastraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(cmbTipossecun, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblTipo2))
+                        .addGap(55, 55, 55))))
         );
         panCadastraLayout.setVerticalGroup(
             panCadastraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panCadastraLayout.createSequentialGroup()
                 .addGap(96, 96, 96)
-                .addGroup(panCadastraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(lblTipo2)
-                    .addComponent(lblTipo1))
-                .addGap(9, 9, 9)
-                .addGroup(panCadastraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtNomePoke, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cmbTipossecun, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cmbTiposprim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(panCadastraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panCadastraLayout.createSequentialGroup()
+                        .addGroup(panCadastraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(lblTipo2))
+                        .addGap(9, 9, 9)
+                        .addGroup(panCadastraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cmbTipossecun, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(panCadastraLayout.createSequentialGroup()
+                        .addComponent(lblTipo1)
+                        .addGap(9, 9, 9)
+                        .addComponent(cmbTiposprim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -226,28 +241,28 @@ public class TelaPokemons extends javax.swing.JInternalFrame {
                 .addContainerGap(61, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Cadastra", panCadastra);
+        tabAbas.addTab("Cadastra", panCadastra);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 562, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(tabAbas, javax.swing.GroupLayout.PREFERRED_SIZE, 562, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(tabAbas)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtNomePokeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomePokeActionPerformed
+    private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNomePokeActionPerformed
+    }//GEN-LAST:event_txtNomeActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-        String nome = txtNomePoke.getText();
+        String nome = txtNome.getText();
         ComboItem tipoPrimario = (ComboItem) cmbTiposprim.getSelectedItem();
         ComboItem tipoSecundario = (ComboItem) cmbTipossecun.getSelectedItem();
 
@@ -255,16 +270,33 @@ public class TelaPokemons extends javax.swing.JInternalFrame {
         p.setNome(nome);
         p.setTipoPrimario(tipoPrimario.getCodigo());
         p.setTipoSecundario(tipoSecundario.getCodigo());
-        boolean retorno = cp.salvar(p);
+
+       boolean retorno = false;
+        if (codigo == 0) {
+            retorno = cp.salvar(p);
+        } else {
+            p.setNumPokedex(codigo);
+            retorno = cp.editar(p);
+        }
 
         if (retorno) {
-            JOptionPane.showMessageDialog(null, "Salvo com sucesso");
-            txtNomePoke.setText("");
-            txtNomePoke.requestFocus();
+            if (codigo == 0) {
+                Mensagem.informacao("Salvo com sucesso");
+            } else {
+                codigo = 0;
+                JOptionPane.showMessageDialog(null, "Editado com sucesso");
+            }
+
+            txtNome.setText("");
+            cmbTiposprim.setSelectedIndex(-1);
+            cmbTipossecun.setSelectedIndex(-1);
+
+            txtNome.requestFocus();
             montaTabela();
         } else {
             JOptionPane.showMessageDialog(null, "Ocorreu um erro, verifique os logs.");
         }
+        
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
@@ -284,8 +316,26 @@ public class TelaPokemons extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbTipossecunActionPerformed
 
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+        String idString = String.valueOf(tblPokemons.getValueAt(tblPokemons.getSelectedRow(), 0));
+        int id = Integer.parseInt(idString);
+
+        Pokemons p = cp.recuperarUm(id);
+        if (p != null) {
+            codigo = p.getNumPokedex();
+            txtNome.setText(p.getNome());
+            ComboItem tipoPrimario = (ComboItem) cmbTiposprim.getSelectedItem();
+            ComboItem tipoSecundario = (ComboItem) cmbTipossecun.getSelectedItem();
+
+            tabAbas.setSelectedIndex(1);
+        } else {
+            JOptionPane.showMessageDialog(null, "Ocorreu um erro ao editar!");
+        }   // TODO add your handling code here:
+    }//GEN-LAST:event_btnEditarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnSalvar;
     private javax.swing.JComboBox<String> cmbTiposprim;
@@ -293,12 +343,12 @@ public class TelaPokemons extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel lblTipo1;
     private javax.swing.JLabel lblTipo2;
     private javax.swing.JPanel panCadastra;
     private javax.swing.JPanel panConsulta;
+    private javax.swing.JTabbedPane tabAbas;
     private javax.swing.JTable tblPokemons;
-    private javax.swing.JTextField txtNomePoke;
+    private javax.swing.JTextField txtNome;
     // End of variables declaration//GEN-END:variables
 }

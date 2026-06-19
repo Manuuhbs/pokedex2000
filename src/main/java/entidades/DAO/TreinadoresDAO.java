@@ -65,34 +65,36 @@ public class TreinadoresDAO {
        public Treinadores recuperarUm(int id) throws SQLException {
 
         String sql = ""
-                + "SELECT * FROM tipos WHERE id_tipo = " + id;
+                + "SELECT * FROM treinadores WHERE id_treinador = " + id;
 
         resultadoQ = ConexaoBD.executeQuery(sql);
 
         if (resultadoQ.next()) {
             Treinadores t = new Treinadores();
 
-            t.setIdTipo(resultadoQ.getInt("id_tipo"));
+            t.setIdTreinador(resultadoQ.getInt("id_treinador"));
             t.setNome(resultadoQ.getString("nome"));
-            t.setVantagem(resultadoQ.getString("vantagem"));
-            t.setDesvantagem(resultadoQ.getString("desvantagem"));
+            t.setIdade(resultadoQ.getString("idade"));
+            t.setSexo(resultadoQ.getString("sexo"));
+            t.setGenero(resultadoQ.getString("genero"));
             return t;
         }
-        //ajeitar
+        
 
         return null;
     }
-       public void editar(Tipos t) throws SQLException {
+       public void editar(Treinadores t) throws SQLException {
         String sql = ""
-                + "UPDATE tipos SET "
+                + "UPDATE treinadores SET "
                 + "nome = '" + t.getNome() + "',"
-                + "vantagem = '" + t.getVantagem() + "',"
-                + "desvantagem = '" + t.getDesvantagem() + "',"
-                +"WHERE id = " + t.getIdTipo();
+                + "idade = '" + t.getIdade() + "',"
+                + "sexo = '" + t.getSexo() + "',"
+                + "genero = '" + t.getGenero() + "'"
+                +"WHERE id_treinador = " + t.getIdTreinador();
 
         System.out.println("sql: " + sql);
 
         ConexaoBD.executeUpdate(sql);
-        //ajeitar
+        
     }
 }

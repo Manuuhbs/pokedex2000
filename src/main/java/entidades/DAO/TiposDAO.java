@@ -87,8 +87,8 @@ public class TiposDAO {
                 + "UPDATE tipos SET "
                 + "nome = '" + t.getNome() + "',"
                 + "vantagem = '" + t.getVantagem() + "',"
-                + "desvantagem = '" + t.getDesvantagem() + "',"
-                +"WHERE id = " + t.getIdTipo();
+                + "desvantagem = '" + t.getDesvantagem() + "' "
+                + "WHERE id_tipo = " + t.getIdTipo();
 
         System.out.println("sql: " + sql);
 

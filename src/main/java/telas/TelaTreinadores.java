@@ -5,8 +5,11 @@
 package telas;
 
 import apoio.Formatacao;
+import apoio.Mensagem;
+import apoio.PDFManager;
 import controladores.ControlaTreinadores;
 import entidades.Treinadores;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Set;
 import javax.swing.table.AbstractTableModel;
@@ -20,7 +23,7 @@ import javax.swing.JOptionPane;
 public class TelaTreinadores extends javax.swing.JInternalFrame {
 
     ControlaTreinadores ct = new ControlaTreinadores();
-
+    int codigo = 0;
     /**
      * Creates new form TelaTreinadores
      */
@@ -103,11 +106,13 @@ public class TelaTreinadores extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        tabAbas = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblTreinadores = new javax.swing.JTable();
         btnExcluir = new javax.swing.JButton();
+        btnEditar = new javax.swing.JButton();
+        btnPDF = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         txtNome = new javax.swing.JTextField();
         lblNome = new javax.swing.JLabel();
@@ -143,6 +148,20 @@ public class TelaTreinadores extends javax.swing.JInternalFrame {
             }
         });
 
+        btnEditar.setText("Editar");
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarActionPerformed(evt);
+            }
+        });
+
+        btnPDF.setText("Gerar PDF");
+        btnPDF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPDFActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -151,18 +170,29 @@ public class TelaTreinadores extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnEditar)
+                .addGap(38, 38, 38))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnPDF)
+                .addGap(21, 21, 21))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(4, 4, 4)
+                .addComponent(btnPDF)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnExcluir)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnExcluir)
+                    .addComponent(btnEditar))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Consulta", jPanel1);
+        tabAbas.addTab("Consulta", jPanel1);
 
         lblNome.setText("Nome");
 
@@ -231,20 +261,20 @@ public class TelaTreinadores extends javax.swing.JInternalFrame {
                     .addComponent(txtGenero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(45, 45, 45)
                 .addComponent(btnSalvar)
-                .addContainerGap(78, Short.MAX_VALUE))
+                .addContainerGap(100, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Cadastra", jPanel2);
+        tabAbas.addTab("Cadastra", jPanel2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(tabAbas)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(tabAbas)
         );
 
         pack();
@@ -255,16 +285,28 @@ public class TelaTreinadores extends javax.swing.JInternalFrame {
         String idade = txtIdade.getText();
         String sexo = txtSexo.getText();
         String genero = txtGenero.getText();
-        String d = Formatacao.ajustaDataAMD(idade);
         Treinadores tr = new Treinadores();
         tr.setNome(nome);
         tr.setIdade(idade);
         tr.setSexo(sexo);
         tr.setGenero(genero);
-        boolean retorno = ct.salvar(tr);
+
+         boolean retorno = false;
+        if (codigo == 0) {
+            retorno = ct.salvar(tr);
+        } else {
+            tr.setIdTreinador(codigo);
+            retorno = ct.editar(tr);
+        }
 
         if (retorno) {
-            JOptionPane.showMessageDialog(null, "Salvo com sucesso");
+            if (codigo == 0) {
+                Mensagem.informacao("Salvo com sucesso");
+            } else {
+                codigo = 0;
+                JOptionPane.showMessageDialog(null, "Editado com sucesso");
+            }
+
             txtNome.setText("");
             txtIdade.setText("");
             txtSexo.setText("");
@@ -274,7 +316,7 @@ public class TelaTreinadores extends javax.swing.JInternalFrame {
             montaTabela();
         } else {
             JOptionPane.showMessageDialog(null, "Ocorreu um erro, verifique os logs.");
-        }  
+        }
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
@@ -290,18 +332,49 @@ public class TelaTreinadores extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_btnExcluirActionPerformed
 
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+         String idString = String.valueOf(tblTreinadores.getValueAt(tblTreinadores.getSelectedRow(), 0));
+        int id = Integer.parseInt(idString);
+
+        Treinadores t= ct.recuperarUm(id);
+        if (t != null) {
+            codigo = t.getIdTreinador();
+            txtNome.setText(t.getNome());
+            txtIdade.setText(t.getIdade());
+            txtSexo.setText(t.getSexo());
+            txtGenero.setText(t.getGenero());
+            
+
+            tabAbas.setSelectedIndex(1);
+        } else {
+            JOptionPane.showMessageDialog(null, "Ocorreu um erro ao editar!");
+        }                                          
+  // TODO add your handling code here:
+    }//GEN-LAST:event_btnEditarActionPerformed
+
+    private void btnPDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPDFActionPerformed
+      ArrayList<Treinadores> tr = ct.recuperarTodos();
+        try {
+            PDFManager.gerar(tr, "relatorio.pdf");
+        } catch (IOException ex) {
+            System.getLogger(TelaTreinadores.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
+    }//GEN-LAST:event_btnPDFActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnExcluir;
+    private javax.swing.JButton btnPDF;
     private javax.swing.JButton btnSalvar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel lblGênero;
     private javax.swing.JLabel lblIdade;
     private javax.swing.JLabel lblNome;
     private javax.swing.JLabel lblSexo;
+    private javax.swing.JTabbedPane tabAbas;
     private javax.swing.JTable tblTreinadores;
     private javax.swing.JTextField txtGenero;
     private javax.swing.JTextField txtIdade;

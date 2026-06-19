@@ -44,7 +44,7 @@ public class ControlaTreinadores {
             System.out.println("Erro ao excluir treinadores: " + ex.getMessage());
             return false;
         }
-           
+    }
 
     public boolean editar(Treinadores ts) {
         try {

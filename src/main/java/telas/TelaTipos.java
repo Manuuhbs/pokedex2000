@@ -22,6 +22,7 @@ public class TelaTipos extends javax.swing.JInternalFrame {
 
     ControlaTipos ct = new ControlaTipos();
     int codigo = 0;
+
     /**
      * Creates new form TelaTipos
      */
@@ -252,6 +253,7 @@ public class TelaTipos extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtNomeActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        
         String nome = txtNome.getText();
         String vantagem = txtVantagem.getText();
         String desvantagem = txtDesvantagem.getText();
@@ -261,7 +263,7 @@ public class TelaTipos extends javax.swing.JInternalFrame {
         t.setVantagem(vantagem);
         t.setDesvantagem(desvantagem);
 
-         boolean retorno = false;
+        boolean retorno = false;
         if (codigo == 0) {
             retorno = ct.salvar(t);
         } else {
@@ -289,7 +291,7 @@ public class TelaTipos extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
-       String idString = String.valueOf(tblTipos.getValueAt(tblTipos.getSelectedRow(), 0));
+        String idString = String.valueOf(tblTipos.getValueAt(tblTipos.getSelectedRow(), 0));
         int id = Integer.parseInt(idString);
 
         boolean retorno = ct.excluir(id);
@@ -305,10 +307,9 @@ public class TelaTipos extends javax.swing.JInternalFrame {
         String idString = String.valueOf(tblTipos.getValueAt(tblTipos.getSelectedRow(), 0));
         int id = Integer.parseInt(idString);
 
-        Tipos t= ct.recuperarUm(id);
+        Tipos t = ct.recuperarUm(id);
         if (t != null) {
             codigo = t.getIdTipo();
-
             txtNome.setText(t.getNome());
             txtVantagem.setText(t.getVantagem());
             txtDesvantagem.setText(t.getDesvantagem());
@@ -316,16 +317,16 @@ public class TelaTipos extends javax.swing.JInternalFrame {
             tabAbas.setSelectedIndex(1);
         } else {
             JOptionPane.showMessageDialog(null, "Ocorreu um erro ao editar!");
-        }   
+        }
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnPdfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPdfActionPerformed
-       ArrayList<Tipos> t = ct.recuperarTodos();
+        ArrayList<Tipos> t = ct.recuperarTodos();
         try {
             PDFManager.gerar(t, "relatorio.pdf");
         } catch (IOException ex) {
             System.getLogger(TelaTipos.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
-        }                    
+        }
     }//GEN-LAST:event_btnPdfActionPerformed
 
 

@@ -16,6 +16,8 @@ public class TelaPokedex extends javax.swing.JFrame {
     private TelaTipos tt;
     private TelaTreinadores tn;
     private TelaPokemons tp;
+    private TelaItensBolsa tib;
+
     /**
      * Creates new form TelaPrincipal
      */
@@ -40,6 +42,7 @@ public class TelaPokedex extends javax.swing.JFrame {
         menuTipos = new javax.swing.JMenuItem();
         menuTreinadores = new javax.swing.JMenuItem();
         menuPokemons = new javax.swing.JMenuItem();
+        menuItens = new javax.swing.JMenuItem();
 
         jMenu4.setText("jMenu4");
 
@@ -72,6 +75,10 @@ public class TelaPokedex extends javax.swing.JFrame {
         menuPokemons.setText("Pokemons");
         menuPokemons.addActionListener(this::menuPokemonsActionPerformed);
         jMenu1.add(menuPokemons);
+
+        menuItens.setText("Itens da Bolsa");
+        menuItens.addActionListener(this::menuItensActionPerformed);
+        jMenu1.add(menuItens);
 
         menuTelas.add(jMenu1);
 
@@ -111,9 +118,17 @@ public class TelaPokedex extends javax.swing.JFrame {
             tp = new TelaPokemons();
             dskPainel.add(tp);
             tp.setVisible(true);
+        }
     }//GEN-LAST:event_menuPokemonsActionPerformed
 
+    private void menuItensActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItensActionPerformed
+        if (tib == null || tib.isClosed()) {
+            tib = new TelaItensBolsa();
+            dskPainel.add(tib);
+            tib.setVisible(true);
+    }//GEN-LAST:event_menuItensActionPerformed
     }
+    
 
     /**
      * @param args the command line arguments
@@ -144,6 +159,7 @@ public class TelaPokedex extends javax.swing.JFrame {
     private javax.swing.JDesktopPane dskPainel;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenuItem menuItens;
     private javax.swing.JMenuItem menuPokemons;
     private javax.swing.JMenuBar menuTelas;
     private javax.swing.JMenuItem menuTipos;

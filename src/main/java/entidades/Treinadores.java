@@ -55,4 +55,9 @@ public class Treinadores {
     public void setIdade(String idade) {
         this.idade = idade;
     }
+  @Override
+    public String toString() {
+        String retorno = nome + ";" + idade + ";" + sexo + ";" + genero;
+        return retorno;
+    }
 }

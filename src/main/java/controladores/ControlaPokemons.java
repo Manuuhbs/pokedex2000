@@ -34,12 +34,29 @@ public class ControlaPokemons {
             return null;
         }
     }
+    public Pokemons recuperarUm(int id){
+        try {
+            return pDAO.recuperarUm(id);
+        } catch (SQLException ex) {
+            System.out.println("Erro ao recuperar tipos: " + ex.getMessage());
+            return null;
+        }
+    }
       public boolean excluir(int id){
         try {
             pDAO.excluir(id);
             return true;
         } catch (SQLException ex) {
             System.out.println("Erro ao excluir pokemons: " + ex.getMessage());
+            return false;
+        }
+      }
+      public boolean editar(Pokemons p){
+        try {
+            pDAO.editar(p);
+            return true;
+        } catch (SQLException ex) {
+            System.out.println("Erro ao editar pokemons: " + ex.getMessage());
             return false;
         }
       }

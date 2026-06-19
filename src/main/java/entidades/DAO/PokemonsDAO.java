@@ -51,7 +51,38 @@ public class PokemonsDAO {
 
         return pokemons;
     }
+     public Pokemons recuperarUm(int id) throws SQLException {
 
+        String sql = ""
+                + "SELECT * FROM pokemons WHERE num_pokedex = " + id;
+
+        resultadoQ = ConexaoBD.executeQuery(sql);
+
+        if (resultadoQ.next()) {
+            Pokemons p = new Pokemons();
+
+            p.setNumPokedex(resultadoQ.getInt("num_pokedex"));
+            p.setNome(resultadoQ.getString("nome"));
+            p.setTipoPrimario(resultadoQ.getInt("tipo_primario"));
+            p.setTipoSecundario(resultadoQ.getInt("tipo_secundario"));
+            return p;
+        }
+
+        return null;
+    }
+
+      public void editar(Pokemons p) throws SQLException {
+        String sql = ""
+                + "UPDATE pokemons SET "
+                + "nome = '" + p.getNome() + "',"
+                + "tipo_primario = '" + p.getTipoPrimario() + "',"
+                + "tipo_secundario = '" + p.getTipoSecundario() + "' "
+                + "WHERE num_pokedex = " + p.getNumPokedex();
+
+        System.out.println("sql: " + sql);
+
+        ConexaoBD.executeUpdate(sql);
+    }
     public void excluir(int id) throws SQLException {
         String sql = ""
                 + "DELETE FROM pokemons WHERE num_pokedex = " + id;
