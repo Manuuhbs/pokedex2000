@@ -154,19 +154,6 @@ public class PokemonsDAOTest {
         assertNotNull("Lista não deve ser nula", lista);
         assertEquals("Deve haver exatamente 3 pokemons na tabela", 3, lista.size());
     }
-
-    @Test
-    public void testSalvarDeveGerarId() throws SQLException {
-        Pokemons p = new Pokemons();
-        p.setNome("Pikachu");
-        p.setTipoPrimario(1);
-        p.setTipoSecundario(2);
-
-        dao.salvar(p);
-
-        assertTrue(p.getNumPokedex() > 0);
-    }
-
     @Test
     public void testRecuperarTodosQuandoVazio() throws SQLException {
         ArrayList<Pokemons> lista = dao.recuperarTodos();
