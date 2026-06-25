@@ -32,6 +32,15 @@ public class TelaTreinadores extends javax.swing.JInternalFrame {
         montaTabela();
     }
 
+     public boolean validaCampos() {
+        if (txtNome.getText().trim().isEmpty()
+                || txtIdade.getText().trim().isEmpty()
+                || txtSexo.getText().trim().isEmpty()) {
+            Mensagem.erro("um ou mais campos não pode ser nulo");
+            return false;
+        }
+        return true;
+    }
     private void montaTabela() {
         ArrayList<Treinadores> tr = ct.recuperarTodos();
         if (tr == null) {
@@ -281,16 +290,20 @@ public class TelaTreinadores extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-         String nome = txtNome.getText();
+        if(!validaCampos()){
+            return;
+        }
+        String nome = txtNome.getText();
         String idade = txtIdade.getText();
         String sexo = txtSexo.getText();
         String genero = txtGenero.getText();
+        
         Treinadores tr = new Treinadores();
         tr.setNome(nome);
         tr.setIdade(idade);
         tr.setSexo(sexo);
         tr.setGenero(genero);
-
+        
          boolean retorno = false;
         if (codigo == 0) {
             retorno = ct.salvar(tr);

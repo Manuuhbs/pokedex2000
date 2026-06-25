@@ -31,6 +31,16 @@ public class TelaTipos extends javax.swing.JInternalFrame {
         montaTabela();
     }
 
+    public boolean validaCampos() {
+        if (txtNome.getText().trim().isEmpty()
+                || txtVantagem.getText().trim().isEmpty()
+                || txtDesvantagem.getText().trim().isEmpty()) {
+            Mensagem.erro("um ou mais campos não pode ser nulo");
+            return false;
+        }
+        return true;
+    }
+
     private void montaTabela() {
         ArrayList<Tipos> t = ct.recuperarTodos();
         if (t == null) {
@@ -253,7 +263,9 @@ public class TelaTipos extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtNomeActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
-        
+        if (!validaCampos()) {
+            return;
+        }
         String nome = txtNome.getText();
         String vantagem = txtVantagem.getText();
         String desvantagem = txtDesvantagem.getText();
@@ -262,7 +274,6 @@ public class TelaTipos extends javax.swing.JInternalFrame {
         t.setNome(nome);
         t.setVantagem(vantagem);
         t.setDesvantagem(desvantagem);
-
         boolean retorno = false;
         if (codigo == 0) {
             retorno = ct.salvar(t);

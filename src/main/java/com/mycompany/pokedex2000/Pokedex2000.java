@@ -6,6 +6,7 @@ package com.mycompany.pokedex2000;
 
 import apoio.ConexaoBD;
 import javax.swing.JOptionPane;
+import telas.TelaLogin;
 import telas.TelaPokedex;
 
 /**
@@ -17,8 +18,8 @@ public class Pokedex2000 {
     public static void main(String[] args) {
         try {
             ConexaoBD.getInstance().getConnection();
-       TelaPokedex tp = new TelaPokedex();
-       tp.setVisible(true);
+       TelaLogin tl = new TelaLogin();
+       tl.setVisible(true);
        } catch(Exception e) {
             System.out.println(e);
             JOptionPane.showMessageDialog(null, "Erro de conexão com banco de dados");

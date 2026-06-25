@@ -50,6 +50,5 @@ private String desvantagem;
         String retorno = nome + ";" + vantagem + ";" + desvantagem;
         return retorno;
     }
-
 }
 

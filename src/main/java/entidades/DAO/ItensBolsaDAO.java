@@ -19,7 +19,7 @@ public class ItensBolsaDAO {
 
     public void salvar(ItensBolsa ib) throws SQLException {
         String sql = ""
-                + "INSERT INTO tipos (nome, tipo, qtd_item) VALUES ("
+                + "INSERT INTO itens_bolsa (nome, tipo, qtd_item, id_item) VALUES ("
                 + "'" + ib.getNome() + "',"
                 + "'" + ib.getTipo() + "',"
                 + "'" + ib.getQtdItem() + "',"
@@ -77,7 +77,7 @@ public class ItensBolsaDAO {
 
     public void excluir(int id) throws SQLException {
         String sql = ""
-                + "DELETE FROM tipos WHERE id_item = " + id;
+                + "DELETE FROM itens_bolsa WHERE id_item = " + id;
 
         System.out.println("sql: " + sql);
 
@@ -86,7 +86,7 @@ public class ItensBolsaDAO {
 
     public void editar(ItensBolsa ib) throws SQLException {
         String sql = ""
-                + "UPDATE tipos SET "
+                + "UPDATE itens_bolsa SET "
                 + "nome = '" + ib.getNome() + "',"
                 + "tipo = '" + ib.getTipo() + "',"
                 + "qtd_item = '" + ib.getQtdItem() + "',"

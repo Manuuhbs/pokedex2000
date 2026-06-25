@@ -7,6 +7,7 @@ package telas;
 import apoio.ComboItem;
 import apoio.Mensagem;
 import controladores.ControlaItensBolsa;
+import entidades.DAO.CombosDAO;
 import entidades.ItensBolsa;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -27,6 +28,18 @@ public class TelaItensBolsa extends javax.swing.JInternalFrame {
     public TelaItensBolsa() {
         initComponents();
         montaTabela();
+        new CombosDAO().popularCombo("treinadores", cmbIdTreinador);
+    }
+
+    public boolean validaCampos() {
+        if (txtNome.getText().trim().isEmpty()
+                || txtTipo.getText().trim().isEmpty()
+                || txtQtd.getText().trim().isEmpty()
+                || cmbIdTreinador.getSelectedIndex() == -1) {
+            Mensagem.erro("um ou mais campos não pode ser nulo");
+            return false;
+        }
+        return true;
     }
 
     private void montaTabela() {
@@ -46,7 +59,7 @@ public class TelaItensBolsa extends javax.swing.JInternalFrame {
                             return "Tipo";
                         case 3:
                             return "Quantidade";
-                            case 4:
+                        case 4:
                             return "Id do Treinador";
                         default:
                             return "";
@@ -77,7 +90,7 @@ public class TelaItensBolsa extends javax.swing.JInternalFrame {
                                 return iba.getTipo();
                             case 3:
                                 return iba.getQtdItem();
-                                  case 4:
+                            case 4:
                                 return iba.getIdTreinador();
                         }
 
@@ -102,10 +115,12 @@ public class TelaItensBolsa extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        tabAbas = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblItens = new javax.swing.JTable();
+        btnEditar = new javax.swing.JButton();
+        btnExcluir = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         lblNome = new javax.swing.JLabel();
         txtNome = new javax.swing.JTextField();
@@ -116,6 +131,8 @@ public class TelaItensBolsa extends javax.swing.JInternalFrame {
         cmbIdTreinador = new javax.swing.JComboBox<>();
         lblTreinador = new javax.swing.JLabel();
         btnSalvar = new javax.swing.JButton();
+
+        setClosable(true);
 
         tblItens.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -130,20 +147,46 @@ public class TelaItensBolsa extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(tblItens);
 
+        btnEditar.setText("Editar");
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarActionPerformed(evt);
+            }
+        });
+
+        btnExcluir.setBackground(new java.awt.Color(255, 153, 153));
+        btnExcluir.setForeground(new java.awt.Color(0, 255, 204));
+        btnExcluir.setText("Excluir");
+        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 485, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 475, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(btnExcluir)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnEditar)
+                .addGap(16, 16, 16))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 39, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnEditar)
+                    .addComponent(btnExcluir))
+                .addContainerGap())
         );
 
-        jTabbedPane1.addTab("Consulta", jPanel1);
+        tabAbas.addTab("Consulta", jPanel1);
 
         lblNome.setText("Nome");
 
@@ -167,36 +210,31 @@ public class TelaItensBolsa extends javax.swing.JInternalFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(83, 83, 83)
-                .addComponent(lblNome)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblItem)
-                .addGap(100, 100, 100))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtQtd, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
-                    .addComponent(txtNome))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(100, 100, 100)
-                        .addComponent(txtTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(60, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(47, 47, 47)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtQtd, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                            .addComponent(txtNome))
+                        .addGap(99, 99, 99)
+                        .addComponent(txtTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(cmbIdTreinador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblTreinador)
-                            .addComponent(cmbIdTreinador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(81, 81, 81))))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
-                        .addComponent(lblQtd))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(202, 202, 202)
-                        .addComponent(btnSalvar)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(83, 83, 83)
+                                .addComponent(lblNome)
+                                .addGap(190, 190, 190)
+                                .addComponent(lblItem))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(80, 80, 80)
+                                .addComponent(lblQtd)
+                                .addGap(167, 167, 167)
+                                .addComponent(lblTreinador))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(202, 202, 202)
+                                .addComponent(btnSalvar)))))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -217,23 +255,23 @@ public class TelaItensBolsa extends javax.swing.JInternalFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtQtd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cmbIdTreinador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
                 .addComponent(btnSalvar)
                 .addGap(19, 19, 19))
         );
 
-        jTabbedPane1.addTab("Cadastra", jPanel2);
+        tabAbas.addTab("Cadastra", jPanel2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(tabAbas)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jTabbedPane1)
+                .addComponent(tabAbas)
                 .addContainerGap())
         );
 
@@ -241,16 +279,21 @@ public class TelaItensBolsa extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        if(!validaCampos()){
+            return;
+        }
         String nome = txtNome.getText();
         String tipo = txtTipo.getText();
         int qtditens = Integer.parseInt(txtQtd.getText());
         ComboItem IdTreinador = (ComboItem) cmbIdTreinador.getSelectedItem();
-       
+
         ItensBolsa ib = new ItensBolsa();
         ib.setNome(nome);
         ib.setTipo(tipo);
         ib.setQtdItem(qtditens);
         ib.setIdTreinador(IdTreinador.getCodigo());
+        
+        
         boolean retorno = false;
         if (codigo == 0) {
             retorno = cib.salvar(ib);
@@ -275,21 +318,53 @@ public class TelaItensBolsa extends javax.swing.JInternalFrame {
             montaTabela();
         } else {
             JOptionPane.showMessageDialog(null, "Ocorreu um erro, verifique os logs.");
-        }       
+        }
     }//GEN-LAST:event_btnSalvarActionPerformed
+
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+        String idString = String.valueOf(tblItens.getValueAt(tblItens.getSelectedRow(), 0));
+        int id = Integer.parseInt(idString);
+
+        ItensBolsa ib = cib.recuperarUm(id);
+        if (ib != null) {
+            codigo = ib.getIdItem();
+            txtNome.setText(ib.getNome());
+            txtTipo.setText(ib.getTipo());
+            txtQtd.setText(String.valueOf(ib.getQtdItem()));
+            ComboItem IdTreinador = (ComboItem) cmbIdTreinador.getSelectedItem();
+            tabAbas.setSelectedIndex(1);
+        } else {
+            JOptionPane.showMessageDialog(null, "Ocorreu um erro ao editar!");
+        }
+    }//GEN-LAST:event_btnEditarActionPerformed
+
+    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
+        String idString = String.valueOf(tblItens.getValueAt(tblItens.getSelectedRow(), 0));
+        int id = Integer.parseInt(idString);
+
+        boolean retorno = cib.excluir(id);
+        if (retorno) {
+            JOptionPane.showMessageDialog(null, "Registro excluído com sucesso!");
+            montaTabela();
+        } else {
+            JOptionPane.showMessageDialog(null, "Ocorreu um erro ao excluir!");
+        } // TODO add your handling code here:
+    }//GEN-LAST:event_btnExcluirActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnEditar;
+    private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnSalvar;
     private javax.swing.JComboBox<String> cmbIdTreinador;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel lblItem;
     private javax.swing.JLabel lblNome;
     private javax.swing.JLabel lblQtd;
     private javax.swing.JLabel lblTreinador;
+    private javax.swing.JTabbedPane tabAbas;
     private javax.swing.JTable tblItens;
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtQtd;

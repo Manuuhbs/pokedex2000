@@ -1,26 +1,31 @@
-C:\Users\manuela.carlesso\Documents\NetBeansProjects\Pokedex2000\src\main\java\apoio\ComboItem.java
-C:\Users\manuela.carlesso\Documents\NetBeansProjects\Pokedex2000\src\main\java\apoio\ConexaoBD.java
-C:\Users\manuela.carlesso\Documents\NetBeansProjects\Pokedex2000\src\main\java\apoio\FileManager.java
-C:\Users\manuela.carlesso\Documents\NetBeansProjects\Pokedex2000\src\main\java\apoio\Formatacao.java
-C:\Users\manuela.carlesso\Documents\NetBeansProjects\Pokedex2000\src\main\java\apoio\Mensagem.java
-C:\Users\manuela.carlesso\Documents\NetBeansProjects\Pokedex2000\src\main\java\apoio\PDFManager.java
-C:\Users\manuela.carlesso\Documents\NetBeansProjects\Pokedex2000\src\main\java\apoio\TesteConexao.java
-C:\Users\manuela.carlesso\Documents\NetBeansProjects\Pokedex2000\src\main\java\com\mycompany\pokedex2000\Pokedex2000.java
-C:\Users\manuela.carlesso\Documents\NetBeansProjects\Pokedex2000\src\main\java\controladores\ControlaItensBolsa.java
-C:\Users\manuela.carlesso\Documents\NetBeansProjects\Pokedex2000\src\main\java\controladores\ControlaPokemons.java
-C:\Users\manuela.carlesso\Documents\NetBeansProjects\Pokedex2000\src\main\java\controladores\ControlaTipos.java
-C:\Users\manuela.carlesso\Documents\NetBeansProjects\Pokedex2000\src\main\java\controladores\ControlaTreinadores.java
-C:\Users\manuela.carlesso\Documents\NetBeansProjects\Pokedex2000\src\main\java\entidades\DAO\CombosDAO.java
-C:\Users\manuela.carlesso\Documents\NetBeansProjects\Pokedex2000\src\main\java\entidades\DAO\ItensBolsaDAO.java
-C:\Users\manuela.carlesso\Documents\NetBeansProjects\Pokedex2000\src\main\java\entidades\DAO\PokemonsDAO.java
-C:\Users\manuela.carlesso\Documents\NetBeansProjects\Pokedex2000\src\main\java\entidades\DAO\TiposDAO.java
-C:\Users\manuela.carlesso\Documents\NetBeansProjects\Pokedex2000\src\main\java\entidades\DAO\TreinadoresDAO.java
-C:\Users\manuela.carlesso\Documents\NetBeansProjects\Pokedex2000\src\main\java\entidades\ItensBolsa.java
-C:\Users\manuela.carlesso\Documents\NetBeansProjects\Pokedex2000\src\main\java\entidades\Pokemons.java
-C:\Users\manuela.carlesso\Documents\NetBeansProjects\Pokedex2000\src\main\java\entidades\Tipos.java
-C:\Users\manuela.carlesso\Documents\NetBeansProjects\Pokedex2000\src\main\java\entidades\Treinadores.java
-C:\Users\manuela.carlesso\Documents\NetBeansProjects\Pokedex2000\src\main\java\telas\TelaItensBolsa.java
-C:\Users\manuela.carlesso\Documents\NetBeansProjects\Pokedex2000\src\main\java\telas\TelaPokedex.java
-C:\Users\manuela.carlesso\Documents\NetBeansProjects\Pokedex2000\src\main\java\telas\TelaPokemons.java
-C:\Users\manuela.carlesso\Documents\NetBeansProjects\Pokedex2000\src\main\java\telas\TelaTipos.java
-C:\Users\manuela.carlesso\Documents\NetBeansProjects\Pokedex2000\src\main\java\telas\TelaTreinadores.java
+C:\Users\belli\Desktop\codigos\java\projeto final\pokedex2000\src\main\java\apoio\Calculadora.java
+C:\Users\belli\Desktop\codigos\java\projeto final\pokedex2000\src\main\java\apoio\ComboItem.java
+C:\Users\belli\Desktop\codigos\java\projeto final\pokedex2000\src\main\java\apoio\ConexaoBD.java
+C:\Users\belli\Desktop\codigos\java\projeto final\pokedex2000\src\main\java\apoio\FileManager.java
+C:\Users\belli\Desktop\codigos\java\projeto final\pokedex2000\src\main\java\apoio\Formatacao.java
+C:\Users\belli\Desktop\codigos\java\projeto final\pokedex2000\src\main\java\apoio\Mensagem.java
+C:\Users\belli\Desktop\codigos\java\projeto final\pokedex2000\src\main\java\apoio\PDFManager.java
+C:\Users\belli\Desktop\codigos\java\projeto final\pokedex2000\src\main\java\apoio\TesteConexao.java
+C:\Users\belli\Desktop\codigos\java\projeto final\pokedex2000\src\main\java\apoio\Validacao.java
+C:\Users\belli\Desktop\codigos\java\projeto final\pokedex2000\src\main\java\com\mycompany\pokedex2000\Pokedex2000.java
+C:\Users\belli\Desktop\codigos\java\projeto final\pokedex2000\src\main\java\controladores\ControlaItensBolsa.java
+C:\Users\belli\Desktop\codigos\java\projeto final\pokedex2000\src\main\java\controladores\ControlaPokemons.java
+C:\Users\belli\Desktop\codigos\java\projeto final\pokedex2000\src\main\java\controladores\ControlaTipos.java
+C:\Users\belli\Desktop\codigos\java\projeto final\pokedex2000\src\main\java\controladores\ControlaTreinadores.java
+C:\Users\belli\Desktop\codigos\java\projeto final\pokedex2000\src\main\java\controladores\ControlaUsuario.java
+C:\Users\belli\Desktop\codigos\java\projeto final\pokedex2000\src\main\java\entidades\DAO\CombosDAO.java
+C:\Users\belli\Desktop\codigos\java\projeto final\pokedex2000\src\main\java\entidades\DAO\ItensBolsaDAO.java
+C:\Users\belli\Desktop\codigos\java\projeto final\pokedex2000\src\main\java\entidades\DAO\PokemonsDAO.java
+C:\Users\belli\Desktop\codigos\java\projeto final\pokedex2000\src\main\java\entidades\DAO\TiposDAO.java
+C:\Users\belli\Desktop\codigos\java\projeto final\pokedex2000\src\main\java\entidades\DAO\TreinadoresDAO.java
+C:\Users\belli\Desktop\codigos\java\projeto final\pokedex2000\src\main\java\entidades\DAO\UsuarioDAO.java
+C:\Users\belli\Desktop\codigos\java\projeto final\pokedex2000\src\main\java\entidades\ItensBolsa.java
+C:\Users\belli\Desktop\codigos\java\projeto final\pokedex2000\src\main\java\entidades\Pokemons.java
+C:\Users\belli\Desktop\codigos\java\projeto final\pokedex2000\src\main\java\entidades\Tipos.java
+C:\Users\belli\Desktop\codigos\java\projeto final\pokedex2000\src\main\java\entidades\Treinadores.java
+C:\Users\belli\Desktop\codigos\java\projeto final\pokedex2000\src\main\java\telas\TelaItensBolsa.java
+C:\Users\belli\Desktop\codigos\java\projeto final\pokedex2000\src\main\java\telas\TelaLogin.java
+C:\Users\belli\Desktop\codigos\java\projeto final\pokedex2000\src\main\java\telas\TelaPokedex.java
+C:\Users\belli\Desktop\codigos\java\projeto final\pokedex2000\src\main\java\telas\TelaPokemons.java
+C:\Users\belli\Desktop\codigos\java\projeto final\pokedex2000\src\main\java\telas\TelaTipos.java
+C:\Users\belli\Desktop\codigos\java\projeto final\pokedex2000\src\main\java\telas\TelaTreinadores.java

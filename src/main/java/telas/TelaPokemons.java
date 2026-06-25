@@ -35,6 +35,15 @@ public class TelaPokemons extends javax.swing.JInternalFrame {
         new CombosDAO().popularCombo("tipos", cmbTipossecun);
     }
 
+    public boolean validaCampos() {
+        if (txtNome.getText().trim().isEmpty()
+                || cmbTiposprim.getSelectedIndex() == -1) {
+            Mensagem.erro("um ou mais campos não pode ser nulo");
+            return false;
+        }
+        return true;
+    }
+
     private void montaTabela() {
         ArrayList<Pokemons> p = cp.recuperarTodos();
         if (p == null) {
@@ -81,9 +90,12 @@ public class TelaPokemons extends javax.swing.JInternalFrame {
                                 Tipos t = ct.recuperarUm(ps.getTipoPrimario());
                                 return t.getNome();
                             case 3:
-                                return ps.getTipoSecundario();
+                                Tipos t2 = ct.recuperarUm(ps.getTipoSecundario());
+                                if (t2 != null) {
+                                    return t2.getNome();
+                                }
+                                return "-";
                         }
-
                     }
 
                     return "n/d";
@@ -262,6 +274,9 @@ public class TelaPokemons extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtNomeActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        if (!validaCampos()) {
+            return;
+        }
         String nome = txtNome.getText();
         ComboItem tipoPrimario = (ComboItem) cmbTiposprim.getSelectedItem();
         ComboItem tipoSecundario = (ComboItem) cmbTipossecun.getSelectedItem();
@@ -269,9 +284,12 @@ public class TelaPokemons extends javax.swing.JInternalFrame {
         Pokemons p = new Pokemons();
         p.setNome(nome);
         p.setTipoPrimario(tipoPrimario.getCodigo());
-        p.setTipoSecundario(tipoSecundario.getCodigo());
-
-       boolean retorno = false;
+        if (tipoSecundario != null) {
+            p.setTipoSecundario(tipoSecundario.getCodigo());
+        } else {
+            p.setTipoSecundario(0);
+        }
+        boolean retorno = false;
         if (codigo == 0) {
             retorno = cp.salvar(p);
         } else {
@@ -296,7 +314,7 @@ public class TelaPokemons extends javax.swing.JInternalFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Ocorreu um erro, verifique os logs.");
         }
-        
+
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
@@ -326,7 +344,6 @@ public class TelaPokemons extends javax.swing.JInternalFrame {
             txtNome.setText(p.getNome());
             ComboItem tipoPrimario = (ComboItem) cmbTiposprim.getSelectedItem();
             ComboItem tipoSecundario = (ComboItem) cmbTipossecun.getSelectedItem();
-
             tabAbas.setSelectedIndex(1);
         } else {
             JOptionPane.showMessageDialog(null, "Ocorreu um erro ao editar!");
