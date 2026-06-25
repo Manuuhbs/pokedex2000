@@ -74,26 +74,19 @@ public class PokemonsDAOTest {
         ConexaoBD.getInstance().shutdown();
     }
 
-    /**
-     * Testa a inserção de um planeta: 1) Insere um planeta via dao.salvar 2)
-     * Recupera todos e valida que existe somente 1 3) Recupera via
-     * dao.recuperarUm(1) e valida os dados
-     */
+ 
     @Test
     public void testInserirERecuperarPokemons() throws SQLException {
-        // 1) Cria objeto e insere no banco
         Pokemons p = new Pokemons();
         p.setNome("Raichu");
         p.setTipoPrimario(5);
         p.setTipoSecundario(2);
         dao.salvar(p);
-
-        // 2) Recupera todos, deve haver 1
+        
         ArrayList<Pokemons> lista = dao.recuperarTodos();
         assertNotNull("Lista não deve ser nula", lista);
         assertEquals("Deve haver exatamente 1 planeta na tabela", 1, lista.size());
 
-        // 3) Recupera por ID e valida os dados
         Pokemons recuperado = dao.recuperarUm(1);
         assertNotNull("recuperarUm(id) não deve retornar null", recuperado);
         assertEquals(1, recuperado.getNumPokedex());
@@ -102,21 +95,14 @@ public class PokemonsDAOTest {
         assertEquals(p.getTipoSecundario(), recuperado.getTipoSecundario());
     }
 
-    /**
-     * Testa a edição de um pokemon: 1) Insere um pokemon inicial 2) Altera
-     * campos via dao.editar(...) 3) Recupera via dao.recuperarUm(1) e valida as
-     * alterações
-     */
     @Test
     public void testEditarPokemons() throws SQLException {
-        // 1) Insere um registro inicial
         Pokemons p = new Pokemons();
         p.setNome("Raichu");
         p.setTipoPrimario(5);
         p.setTipoSecundario(2);
         dao.salvar(p);
 
-        // 2) Edita com novos dados
         Pokemons modificado = new Pokemons();
         modificado.setNumPokedex(1);
         modificado.setNome("Raichu Shiny");
@@ -124,7 +110,6 @@ public class PokemonsDAOTest {
         modificado.setTipoSecundario(6);
         dao.editar(modificado);
 
-        // 3) Recupera e valida os campos atualizados
         Pokemons recuperado = dao.recuperarUm(1);
         assertNotNull("Pokemon com ID 1 deveria existir após edição", recuperado);
         assertEquals(1, recuperado.getNumPokedex());
@@ -133,44 +118,29 @@ public class PokemonsDAOTest {
         assertEquals(6, recuperado.getTipoSecundario());
     }
 
-    /**
-     * Testa a exclusão de um pokemon: 1) Insere um pokemon 2) Chama
-     * dao.excluir(1) 3) Verifica que dao.recuperarUm(1) retorna null 4)
-     * Verifica que dao.recuperarTodos() retorna lista vazia
-     */
     @Test
     public void testExcluirPokemons() throws SQLException {
-        // 1) Insere um registro
         Pokemons p = new Pokemons();
         p.setNome("Wobbuffet");
         p.setTipoPrimario(4);
         p.setTipoSecundario(3);
         dao.salvar(p);
 
-        // Confirma que existe antes da exclusão
         Pokemons antes = dao.recuperarUm(1);
         assertNotNull("Planeta com ID 1 deveria existir antes da exclusão", antes);
 
-        // 2) Exclui o planeta de ID = 1
         dao.excluir(1);
 
-        // 3) Verifica que recuperarUm(1) retorna null
         Pokemons depois = dao.recuperarUm(1);
         assertNull("recuperarUm(1) deve retornar null após exclusão", depois);
 
-        // 4) Verifica que recuperarTodos() retorna lista vazia
         ArrayList<Pokemons> todos = dao.recuperarTodos();
         assertNotNull("Lista retornada por recuperarTodos não deve ser null", todos);
         assertTrue("Lista deve estar vazia após exclusão do pokemon", todos.isEmpty());
     }
 
-    /**
-     * Testa a inserção de múltiplos pokemons e a recuperação de todos: 1)
-     * Insere 3 pokemons 2) Recupera todos e valida a quantidade
-     */
     @Test
     public void testRecuperarTodosComMultiplosPokemons() throws SQLException {
-        // 1) Insere 3 pokemons
         String[] nomes = {"Chimchar", "Piplup", "Turtwig"};
         for (String nome : nomes) {
             Pokemons p = new Pokemons();
@@ -180,7 +150,6 @@ public class PokemonsDAOTest {
             dao.salvar(p);
         }
 
-        // 2) Recupera todos e valida
         ArrayList<Pokemons> lista = dao.recuperarTodos();
         assertNotNull("Lista não deve ser nula", lista);
         assertEquals("Deve haver exatamente 3 pokemons na tabela", 3, lista.size());

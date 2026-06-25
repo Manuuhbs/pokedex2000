@@ -35,7 +35,9 @@ public class TelaTreinadores extends javax.swing.JInternalFrame {
      public boolean validaCampos() {
         if (txtNome.getText().trim().isEmpty()
                 || txtIdade.getText().trim().isEmpty()
-                || txtSexo.getText().trim().isEmpty()) {
+                || txtGenero.getText().trim().isEmpty()
+                || txtSexo.getText().trim().isEmpty())
+        {
             Mensagem.erro("um ou mais campos não pode ser nulo");
             return false;
         }

@@ -19,7 +19,7 @@ public class ItensBolsaDAO {
 
     public void salvar(ItensBolsa ib) throws SQLException {
         String sql = ""
-                + "INSERT INTO itens_bolsa (nome, tipo, qtd_item, id_item) VALUES ("
+                + "INSERT INTO itens_bolsa (nome, tipo, qtd_item, id_treinador) VALUES ("
                 + "'" + ib.getNome() + "',"
                 + "'" + ib.getTipo() + "',"
                 + "'" + ib.getQtdItem() + "',"

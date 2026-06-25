@@ -1,100 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="entidades.DAOTest.PokemonsDAOTest" time="1.257" tests="7" errors="5" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="entidades.DAOTest.PokemonsDAOTest" time="0.067" tests="2" errors="2" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.class.path" value="C:\Users\belli\Desktop\codigos\java\projeto final\pokedex2000\target\test-classes;C:\Users\belli\Desktop\codigos\java\projeto final\pokedex2000\target\classes;C:\Users\belli\.m2\repository\org\postgresql\postgresql\42.7.10\postgresql-42.7.10.jar;C:\Users\belli\.m2\repository\org\checkerframework\checker-qual\3.52.0\checker-qual-3.52.0.jar;C:\Users\belli\.m2\repository\org\apache\pdfbox\pdfbox\3.0.3\pdfbox-3.0.3.jar;C:\Users\belli\.m2\repository\org\apache\pdfbox\pdfbox-io\3.0.3\pdfbox-io-3.0.3.jar;C:\Users\belli\.m2\repository\org\apache\pdfbox\fontbox\3.0.3\fontbox-3.0.3.jar;C:\Users\belli\.m2\repository\commons-logging\commons-logging\1.3.3\commons-logging-1.3.3.jar;C:\Users\belli\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\belli\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
-    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.class.path" value="C:\Users\manuela.carlesso\Documents\NetBeansProjects\Pokedex2000\target\test-classes;C:\Users\manuela.carlesso\Documents\NetBeansProjects\Pokedex2000\target\classes;C:\Users\manuela.carlesso\.m2\repository\org\postgresql\postgresql\42.7.10\postgresql-42.7.10.jar;C:\Users\manuela.carlesso\.m2\repository\org\checkerframework\checker-qual\3.52.0\checker-qual-3.52.0.jar;C:\Users\manuela.carlesso\.m2\repository\org\apache\pdfbox\pdfbox\3.0.3\pdfbox-3.0.3.jar;C:\Users\manuela.carlesso\.m2\repository\org\apache\pdfbox\pdfbox-io\3.0.3\pdfbox-io-3.0.3.jar;C:\Users\manuela.carlesso\.m2\repository\org\apache\pdfbox\fontbox\3.0.3\fontbox-3.0.3.jar;C:\Users\manuela.carlesso\.m2\repository\commons-logging\commons-logging\1.3.3\commons-logging-1.3.3.jar;C:\Users\manuela.carlesso\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\manuela.carlesso\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\manuela.carlesso\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;"/>
+    <property name="java.vm.vendor" value="Amazon.com Inc."/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
-    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="java.vendor.url" value="https://aws.amazon.com/corretto/"/>
     <property name="user.timezone" value="America/Sao_Paulo"/>
     <property name="os.name" value="Windows 11"/>
     <property name="java.vm.specification.version" value="21"/>
     <property name="user.country" value="BR"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
-    <property name="sun.boot.library.path" value="C:\Program Files\java\jdk-21.0.10\bin"/>
-    <property name="sun.java.command" value="C:\Users\belli\AppData\Local\Temp\surefire16032268993578785434\surefirebooter-20260624231250641_3.jar C:\Users\belli\AppData\Local\Temp\surefire16032268993578785434 2026-06-24T23-12-50_542-jvmRun1 surefire-20260624231250641_1tmp surefire_0-20260624231250641_2tmp"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Amazon Corretto\jdk21.0.5_11\bin"/>
+    <property name="sun.java.command" value="C:\Users\manuela.carlesso\AppData\Local\Temp\surefire18419264563872553634\surefirebooter-20260625191012981_3.jar C:\Users\manuela.carlesso\AppData\Local\Temp\surefire18419264563872553634 2026-06-25T19-10-12_320-jvmRun1 surefire-20260625191012981_1tmp surefire_0-20260625191012981_2tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="test" value="entidades.DAOTest.PokemonsDAOTest"/>
-    <property name="surefire.test.class.path" value="C:\Users\belli\Desktop\codigos\java\projeto final\pokedex2000\target\test-classes;C:\Users\belli\Desktop\codigos\java\projeto final\pokedex2000\target\classes;C:\Users\belli\.m2\repository\org\postgresql\postgresql\42.7.10\postgresql-42.7.10.jar;C:\Users\belli\.m2\repository\org\checkerframework\checker-qual\3.52.0\checker-qual-3.52.0.jar;C:\Users\belli\.m2\repository\org\apache\pdfbox\pdfbox\3.0.3\pdfbox-3.0.3.jar;C:\Users\belli\.m2\repository\org\apache\pdfbox\pdfbox-io\3.0.3\pdfbox-io-3.0.3.jar;C:\Users\belli\.m2\repository\org\apache\pdfbox\fontbox\3.0.3\fontbox-3.0.3.jar;C:\Users\belli\.m2\repository\commons-logging\commons-logging\1.3.3\commons-logging-1.3.3.jar;C:\Users\belli\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\belli\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="surefire.test.class.path" value="C:\Users\manuela.carlesso\Documents\NetBeansProjects\Pokedex2000\target\test-classes;C:\Users\manuela.carlesso\Documents\NetBeansProjects\Pokedex2000\target\classes;C:\Users\manuela.carlesso\.m2\repository\org\postgresql\postgresql\42.7.10\postgresql-42.7.10.jar;C:\Users\manuela.carlesso\.m2\repository\org\checkerframework\checker-qual\3.52.0\checker-qual-3.52.0.jar;C:\Users\manuela.carlesso\.m2\repository\org\apache\pdfbox\pdfbox\3.0.3\pdfbox-3.0.3.jar;C:\Users\manuela.carlesso\.m2\repository\org\apache\pdfbox\pdfbox-io\3.0.3\pdfbox-io-3.0.3.jar;C:\Users\manuela.carlesso\.m2\repository\org\apache\pdfbox\fontbox\3.0.3\fontbox-3.0.3.jar;C:\Users\manuela.carlesso\.m2\repository\commons-logging\commons-logging\1.3.3\commons-logging-1.3.3.jar;C:\Users\manuela.carlesso\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\manuela.carlesso\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\manuela.carlesso\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
-    <property name="user.home" value="C:\Users\belli"/>
+    <property name="user.home" value="C:\Users\manuela.carlesso"/>
     <property name="user.language" value="pt"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
-    <property name="java.version.date" value="2026-01-20"/>
-    <property name="java.home" value="C:\Program Files\java\jdk-21.0.10"/>
+    <property name="java.version.date" value="2024-10-15"/>
+    <property name="java.home" value="C:\Program Files\Amazon Corretto\jdk21.0.5_11"/>
     <property name="file.separator" value="\"/>
-    <property name="basedir" value="C:\Users\belli\Desktop\codigos\java\projeto final\pokedex2000"/>
+    <property name="basedir" value="C:\Users\manuela.carlesso\Documents\NetBeansProjects\Pokedex2000"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\belli\AppData\Local\Temp\surefire16032268993578785434\surefirebooter-20260624231250641_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\manuela.carlesso\AppData\Local\Temp\surefire18419264563872553634\surefirebooter-20260625191012981_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="java.runtime.version" value="21.0.10+8-LTS-217"/>
-    <property name="user.name" value="belli"/>
+    <property name="java.runtime.version" value="21.0.5+11-LTS"/>
+    <property name="user.name" value="manuela.carlesso"/>
     <property name="stdout.encoding" value="Cp1252"/>
     <property name="path.separator" value=";"/>
     <property name="os.version" value="10.0"/>
-    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="file.encoding" value="UTF-8"/>
-    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
-    <property name="maven.ext.class.path" value="C:\Program Files\netbeans\netbeans\java\maven-nblib\netbeans-eventspy.jar"/>
-    <property name="localRepository" value="C:\Users\belli\.m2\repository"/>
-    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
-    <property name="java.io.tmpdir" value="C:\Users\belli\AppData\Local\Temp\"/>
-    <property name="java.version" value="21.0.10"/>
-    <property name="user.dir" value="C:\Users\belli\Desktop\codigos\java\projeto final\pokedex2000"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Corretto-21.0.5.11.1"/>
+    <property name="maven.ext.class.path" value="C:\Program Files\NetBeans-24\netbeans\java\maven-nblib\netbeans-eventspy.jar"/>
+    <property name="localRepository" value="C:\Users\manuela.carlesso\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/corretto/corretto-21/issues/"/>
+    <property name="java.io.tmpdir" value="C:\Users\MANUEL~1.CAR\AppData\Local\Temp\"/>
+    <property name="java.version" value="21.0.5"/>
+    <property name="user.dir" value="C:\Users\manuela.carlesso\Documents\NetBeansProjects\Pokedex2000"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="native.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\java\jdk-21.0.10\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\java\jdk-21.0.10\bin;C:\Program Files\Git\cmd;C:\Users\belli\AppData\Local\Microsoft\WindowsApps;C:\Users\belli\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\belli\AppData\Local\GitHubDesktop\bin;C:\Program Files\netbeans\netbeans\bin\;."/>
+    <property name="java.library.path" value="C:\Program Files\Amazon Corretto\jdk21.0.5_11\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Amazon Corretto\jdk21.0.5_11\bin;C:\Program Files\Python313\Scripts\;C:\Program Files\Python313\;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Users\manuela.carlesso\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.3\bin;;C:\Users\manuela.carlesso\AppData\Local\Programs\Git\cmd;."/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
     <property name="stderr.encoding" value="Cp1252"/>
-    <property name="java.vendor" value="Oracle Corporation"/>
-    <property name="java.vm.version" value="21.0.10+8-LTS-217"/>
+    <property name="java.vendor" value="Amazon.com Inc."/>
+    <property name="java.vm.version" value="21.0.5+11-LTS"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="testSalvarDeveGerarId" classname="entidades.DAOTest.PokemonsDAOTest" time="0.085">
-    <error message="ERRO: o valor nulo na coluna &quot;url&quot; da relação &quot;pokemons&quot; viola a restrição de não-nulo&#10;  Detalhe: Registro que falhou contém (1, Pikachu, null, 1, 2)." type="org.postgresql.util.PSQLException"><![CDATA[org.postgresql.util.PSQLException: 
-ERRO: o valor nulo na coluna "url" da relação "pokemons" viola a restrição de não-nulo
-  Detalhe: Registro que falhou contém (1, Pikachu, null, 1, 2).
-	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2875)
-	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2560)
-	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:429)
-	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:526)
-	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:436)
-	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:358)
-	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:343)
-	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:319)
-	at org.postgresql.jdbc.PgStatement.executeUpdate(PgStatement.java:292)
+  <testcase name="" classname="entidades.DAOTest.PokemonsDAOTest" time="0.062">
+    <error message="conexao==null" type="java.lang.RuntimeException"><![CDATA[java.lang.RuntimeException: conexao==null
+	at apoio.ConexaoBD.getConnection(ConexaoBD.java:63)
 	at apoio.ConexaoBD.executeUpdate(ConexaoBD.java:76)
-	at entidades.DAO.PokemonsDAO.salvar(PokemonsDAO.java:30)
-	at entidades.DAOTest.PokemonsDAOTest.testSalvarDeveGerarId(PokemonsDAOTest.java:196)
+	at entidades.DAOTest.PokemonsDAOTest.setUpClass(PokemonsDAOTest.java:45)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
-	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
 	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
@@ -107,45 +84,21 @@ ERRO: o valor nulo na coluna "url" da relação "pokemons" viola a restrição d
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
 ]]></error>
-    <system-out><![CDATA[sql: INSERT INTO pokemons (nome, tipo_primario, tipo_secundario) VALUES ('Pikachu','1','2')
-]]></system-out>
+    <system-err><![CDATA[org.postgresql.util.PSQLException: FATAL: banco de dados "pokedex200Test" n�o existe
+]]></system-err>
   </testcase>
-  <testcase name="testRecuperarTodosComMultiplosPokemons" classname="entidades.DAOTest.PokemonsDAOTest" time="0.11">
-    <error message="ERRO: o valor nulo na coluna &quot;url&quot; da relação &quot;pokemons&quot; viola a restrição de não-nulo&#10;  Detalhe: Registro que falhou contém (1, Chimchar, null, 5, 2)." type="org.postgresql.util.PSQLException"><![CDATA[org.postgresql.util.PSQLException: 
-ERRO: o valor nulo na coluna "url" da relação "pokemons" viola a restrição de não-nulo
-  Detalhe: Registro que falhou contém (1, Chimchar, null, 5, 2).
-	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2875)
-	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2560)
-	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:429)
-	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:526)
-	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:436)
-	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:358)
-	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:343)
-	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:319)
-	at org.postgresql.jdbc.PgStatement.executeUpdate(PgStatement.java:292)
+  <testcase name="" classname="entidades.DAOTest.PokemonsDAOTest" time="0.066">
+    <error message="conexao==null" type="java.lang.RuntimeException"><![CDATA[java.lang.RuntimeException: conexao==null
+	at apoio.ConexaoBD.getConnection(ConexaoBD.java:63)
 	at apoio.ConexaoBD.executeUpdate(ConexaoBD.java:76)
-	at entidades.DAO.PokemonsDAO.salvar(PokemonsDAO.java:30)
-	at entidades.DAOTest.PokemonsDAOTest.testRecuperarTodosComMultiplosPokemons(PokemonsDAOTest.java:180)
+	at entidades.DAOTest.PokemonsDAOTest.tearDownClass(PokemonsDAOTest.java:54)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
-	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.internal.runners.statements.RunAfters.invokeMethod(RunAfters.java:46)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:33)
 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
 	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:316)
@@ -157,162 +110,5 @@ ERRO: o valor nulo na coluna "url" da relação "pokemons" viola a restrição d
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
 ]]></error>
-    <system-out><![CDATA[sql: INSERT INTO pokemons (nome, tipo_primario, tipo_secundario) VALUES ('Chimchar','5','2')
-]]></system-out>
-  </testcase>
-  <testcase name="testInserirERecuperarPokemons" classname="entidades.DAOTest.PokemonsDAOTest" time="0.218">
-    <error message="ERRO: o valor nulo na coluna &quot;url&quot; da relação &quot;pokemons&quot; viola a restrição de não-nulo&#10;  Detalhe: Registro que falhou contém (1, Raichu, null, 5, 2)." type="org.postgresql.util.PSQLException"><![CDATA[org.postgresql.util.PSQLException: 
-ERRO: o valor nulo na coluna "url" da relação "pokemons" viola a restrição de não-nulo
-  Detalhe: Registro que falhou contém (1, Raichu, null, 5, 2).
-	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2875)
-	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2560)
-	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:429)
-	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:526)
-	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:436)
-	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:358)
-	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:343)
-	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:319)
-	at org.postgresql.jdbc.PgStatement.executeUpdate(PgStatement.java:292)
-	at apoio.ConexaoBD.executeUpdate(ConexaoBD.java:76)
-	at entidades.DAO.PokemonsDAO.salvar(PokemonsDAO.java:30)
-	at entidades.DAOTest.PokemonsDAOTest.testInserirERecuperarPokemons(PokemonsDAOTest.java:89)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
-	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:316)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:240)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:214)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:155)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
-	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
-	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-]]></error>
-    <system-out><![CDATA[sql: INSERT INTO pokemons (nome, tipo_primario, tipo_secundario) VALUES ('Raichu','5','2')
-]]></system-out>
-  </testcase>
-  <testcase name="testExcluirPokemons" classname="entidades.DAOTest.PokemonsDAOTest" time="0.099">
-    <error message="ERRO: o valor nulo na coluna &quot;url&quot; da relação &quot;pokemons&quot; viola a restrição de não-nulo&#10;  Detalhe: Registro que falhou contém (1, Wobbuffet, null, 4, 3)." type="org.postgresql.util.PSQLException"><![CDATA[org.postgresql.util.PSQLException: 
-ERRO: o valor nulo na coluna "url" da relação "pokemons" viola a restrição de não-nulo
-  Detalhe: Registro que falhou contém (1, Wobbuffet, null, 4, 3).
-	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2875)
-	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2560)
-	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:429)
-	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:526)
-	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:436)
-	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:358)
-	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:343)
-	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:319)
-	at org.postgresql.jdbc.PgStatement.executeUpdate(PgStatement.java:292)
-	at apoio.ConexaoBD.executeUpdate(ConexaoBD.java:76)
-	at entidades.DAO.PokemonsDAO.salvar(PokemonsDAO.java:30)
-	at entidades.DAOTest.PokemonsDAOTest.testExcluirPokemons(PokemonsDAOTest.java:148)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
-	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:316)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:240)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:214)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:155)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
-	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
-	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-]]></error>
-    <system-out><![CDATA[sql: INSERT INTO pokemons (nome, tipo_primario, tipo_secundario) VALUES ('Wobbuffet','4','3')
-]]></system-out>
-  </testcase>
-  <testcase name="testRecuperarTodosQuandoVazio" classname="entidades.DAOTest.PokemonsDAOTest" time="0.101"/>
-  <testcase name="testExcluirPokemonInexistenteNaoDeveQuebrar" classname="entidades.DAOTest.PokemonsDAOTest" time="0.092">
-    <system-out><![CDATA[sql: DELETE FROM pokemons WHERE num_pokedex = 9999
-]]></system-out>
-  </testcase>
-  <testcase name="testEditarPokemons" classname="entidades.DAOTest.PokemonsDAOTest" time="0.099">
-    <error message="ERRO: o valor nulo na coluna &quot;url&quot; da relação &quot;pokemons&quot; viola a restrição de não-nulo&#10;  Detalhe: Registro que falhou contém (1, Raichu, null, 5, 2)." type="org.postgresql.util.PSQLException"><![CDATA[org.postgresql.util.PSQLException: 
-ERRO: o valor nulo na coluna "url" da relação "pokemons" viola a restrição de não-nulo
-  Detalhe: Registro que falhou contém (1, Raichu, null, 5, 2).
-	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2875)
-	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2560)
-	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:429)
-	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:526)
-	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:436)
-	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:358)
-	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:343)
-	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:319)
-	at org.postgresql.jdbc.PgStatement.executeUpdate(PgStatement.java:292)
-	at apoio.ConexaoBD.executeUpdate(ConexaoBD.java:76)
-	at entidades.DAO.PokemonsDAO.salvar(PokemonsDAO.java:30)
-	at entidades.DAOTest.PokemonsDAOTest.testEditarPokemons(PokemonsDAOTest.java:117)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
-	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:316)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:240)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:214)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:155)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
-	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
-	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-]]></error>
-    <system-out><![CDATA[sql: INSERT INTO pokemons (nome, tipo_primario, tipo_secundario) VALUES ('Raichu','5','2')
-]]></system-out>
   </testcase>
 </testsuite>

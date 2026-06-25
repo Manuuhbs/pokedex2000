@@ -40,7 +40,6 @@ public class ConexaoBDTest {
                 instance.shutdown();
             }
         } catch (Exception e) {
-            // ignora se não há conexão ativa
         }
     }
 
